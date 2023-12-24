@@ -1,3 +1,5 @@
 import { main } from "./main.js";
 
-main();
+        main();
+var i = 0 + 1
+console.log(i)
