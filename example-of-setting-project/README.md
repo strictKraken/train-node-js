@@ -1,43 +1,40 @@
 ### Barebone init project
 
-There one or more how to i inti project node js
-
 - Setup linter
-- Setup tsconfig
+- Setup prettier
+- Setup typescript
 - Setup build
-
-this folder is solution for some lab1 - ()[]
+- Setup husky
 
 ### Setup a Node.js project with TS, eslint, prettier, husky
 
 ## Typescript
 
-```
-  pnpm add -D typescript
+```bash
+pnpm add -D typescript
 ```
 
 tsconfig.json
 
 ```json
-  "compilerOptions":
-  {
+{
+  "compilerOptions": {
     "target": "es6", // transpiler in target
     "module": "commonjs", // type imports (how to imports files) - common js is import
     "outDir": "dist", // dir for build
-    "sourceMap": true, // generate source map
-
+    "sourceMap": true // generate source map
   },
   "include": [""], // Files for watch
   "exclude": ["node_modules"]
-
+}
 ```
 
-Build ts files
+Command for run build
 package.json
 
 ```json
 "scripts": {
-    ...,
+    ...
     "build": "tsc --build"
   },
 ```
@@ -50,53 +47,37 @@ package.json
 npx eslint --init
 ```
 
-or
-
-2. Install manual
-
-```bash
-pnpm add -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
-```
-
-create .eslintrc
-
-```bash
-
-```
-
-base setup
+package.json
 
 ```json
 {
-  "parser": "@typescript-eslint/parser", //
-  "extends": [] // Inherits rules for eslint
+  "script": {
+    ...
+    "lint": "eslint src/**/*.ts", // Lint all file path
+    "format": "eslint src/**/*.ts --fix" // fix base errors path
+  }
 }
 ```
-
-package.json
-{
-"script": {
-...
-"lint": "eslint src/**/\*.ts", // Lint all file path
-"format": "eslint src/**/\*.ts --fix" // fix base errors path
-}
-}
 
 ### Prettier
 
 Auto format code
-Install
+
+1. Install
 
 ```bash
 pnpm add -D prettier
 ```
 
-Config
-create .prettierrc
+2. Config
+   create .prettierrc
+
+```json
 {
-"semi": true,
-"tabWidth": 2,
+  "semi": true,
+  "tabWidth": 2
 }
+```
 
 ### Husky
 
@@ -110,10 +91,13 @@ pnpm add -D husky
 ```
 
 package.json
+
+```json
 {
-"husky": {
-"hooks": {
-"pre-commit": "pnpm lint"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm lint"
+    }
+  }
 }
-}
-}
+```
