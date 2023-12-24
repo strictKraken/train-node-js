@@ -81,7 +81,13 @@ pnpm add -D prettier
 
 ### Husky
 
-For create auto pre-commit hook
+## Automatic (recommended)
+
+```bash
+pnpm dlx husky-init && pnpm install
+```
+
+## For create auto pre-commit hook
 
 1. lint error before commit
    Install
@@ -90,14 +96,21 @@ For create auto pre-commit hook
 pnpm add -D husky
 ```
 
+2. Add prepare script
+
 package.json
 
 ```json
 {
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm lint"
-    }
+  "script": {
+    "prepare": "husky install"
   }
 }
+```
+
+If .git in another dir example /dir
+use it
+
+```
+cd .. && husky install dir/husky
 ```
