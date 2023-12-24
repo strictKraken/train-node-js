@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node index.js",
+    "start:node": "node ./dist/index.js",
     "build": "tsc --build",
     "lint": "eslint .",
     "format": "prettier . --write"
@@ -14,10 +14,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.10.5",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "eslint": "^8.56.0",
     "prettier": "3.1.1",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3"
   }
 }

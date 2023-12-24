@@ -1,5 +1,3 @@
-function main() {
-  console.log("hello world");
-}
+import { main } from "./main.js";
 
 main();

@@ -1,8 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "outDir": "dist"
+    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "noEmit": false
   },
-  "include": ["src/**/*.ts"]
+  "include": ["./**/*.ts", "./src/**/*.ts"],
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "Node"
+    }
+  }
 }
